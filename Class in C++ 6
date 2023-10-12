@@ -1,0 +1,51 @@
+#include<iostream>
+using namespace std;
+
+class student
+{
+  public:
+  int id;
+  student()
+  {
+      cout<<"\n\nEnter the student id:";
+      cin>>id;
+  }
+};
+class testmarks:public student
+{
+    public:
+    int mark1,mark2;
+    testmarks()
+    {
+        cout<<"\nEnter mark 1:";
+        cin>>mark1;
+        cout<<"\nEnter mark 2:";
+        cin>>mark2;
+    }
+};
+class sportsmarks:public student
+{
+    public:
+    int PEscore;
+    sportsmarks()
+    {
+        cout<<"\nEnter PE score:";
+        cin>>PEscore;
+    }
+};
+class result:public testmarks,public sportsmarks
+{
+  public:
+  int tresult;     
+  result()
+  {
+    tresult=(mark1+mark2+PEscore);
+    cout<<"\nTotal Marks are:"<<tresult;
+  }
+};
+
+int main()
+{
+    result obj1,obj2;
+    return 0;
+}
