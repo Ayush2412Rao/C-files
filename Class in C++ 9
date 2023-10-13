@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+
+class A
+{
+    int x;
+    public:
+    A()
+    {
+        cout<<"\nCalling base class default";
+    }
+    A(int a)
+    {
+        x=a;
+        cout<<"\nCalling default base class parameterized="<<a;
+    }
+    ~A()
+    {
+        cout<<"\nCalling base class destructor!!";
+    }
+};
+class B: public virtual A
+{
+    int m;
+    public:
+    B()
+    {
+        cout<<"\nCalling derived class default!!";
+    }
+    B(int p):A(p)
+    {
+        m=p;
+        cout<<"\nCalling default derived class parameterized="<<m;
+    }
+    ~B()
+    {
+        cout<<"\nCalling derived class destructor!!";
+    }
+};
+int main()
+{
+    B obj1;
+    B obj2(2);
+    return 0;
+}
